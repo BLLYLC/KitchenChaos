@@ -11,12 +11,33 @@ public class ContainerCounter : BaseCounter
     {
         if (!HasKitchenObject())
         {
-            Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
-            kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
+            if (!player.HasKitchenObject())
+            {//üstünde biþey yok oyuncuda biþey yok
+                Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
+                kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
 
-            OnPlayerGrabbedObject?.Invoke(this,EventArgs.Empty);
-
+                OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                //üstünde biþey yok oyuncuda biþey var
+                player.GetKitchenObject().SetKitchenObjectParent(this);
+            }
         }
+        else
+        {
+            if (!player.HasKitchenObject())
+            {
+                //üstünde biþey var oyuncuda biþey yok
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }
+            else
+            {
+                //üstünde biþey var oyuncuda biþey var
+            }
+        }
+        
+        
 
     }
 }

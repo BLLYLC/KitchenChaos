@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContainerCounter
   counterTopPoint: {fileID: 1830123317728453739}
-  kitchenObjectSO: {fileID: 11400000, guid: 508ffee7e89fa174fa2b82de34258951, type: 2}
+  kitchenObjectSO: {fileID: 11400000, guid: 72313174a592b37418e8f8130cdff006, type: 2}
 --- !u!1001 &4929571906814722104
 PrefabInstance:
   m_ObjectHideFlags: 0
